@@ -1,0 +1,79 @@
+created:
+  id: 1
+  action: "create"
+  target_type: "Widget"
+  target_id: 1
+  whodunnit: "john"
+  object: {name: "foo"}
+
+updated:
+  id: 2
+  action: "update"
+  target_type: "Widget"
+  target_id: 1
+  whodunnit: "mary"
+  object: {name: "bar"}
+
+destroyed:
+  id: 3
+  action: "destroy"
+  target_type: "Widget"
+  target_id: 1
+  whodunnit: "paul"
+  object: {name: "bar"}
+
+created_with_hm:
+  id: 4
+  action: "create"
+  target_type: "Widget"
+  target_id: 2
+  whodunnit: "george"
+  object: {name: "foo", fluxors_attributes: [{name: "baz"}]}
+
+updated_hm:
+  id: 5
+  action: "update"
+  target_type: "Widget"
+  target_id: 2
+  whodunnit: "mary"
+  object: {name: "foo", fluxors_attributes: [{name: "baz"}]}
+
+destroyed_hm:
+  id: 6
+  action: "destroy"
+  target_type: "Widget"
+  target_id: 2
+  whodunnit: "peter"
+  object: {name: "foo", fluxors_attributes: [{name: "qux"}]}
+
+updated_destroyed_hm:
+  id: 7
+  action: "destroy"
+  target_type: "Widget"
+  target_id: 2
+  whodunnit: "peter"
+  object: {name: "foo", fluxors_attributes: []}
+
+created_sti:
+  id: 8
+  action: "create"
+  target_type: "Person"
+  target_id: 2
+  whodunnit: "george"
+  object: {first_name: "Milo", last_name: "Bloom", type: "Employee"}
+
+updated_sti:
+  id: 9
+  action: "update"
+  target_type: "Person"
+  target_id: 2
+  whodunnit: "peter"
+  object: {first_name: "Steve", last_name: "Dallas", type: "Manager"}
+
+destroyed_sti:
+  id: 10
+  action: "destroy"
+  target_type: "Person"
+  target_id: 2
+  whodunnit: "john"
+  object: {first_name: "Cutter", last_name: "John", type: "Manager"}

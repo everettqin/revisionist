@@ -1,0 +1,11 @@
+foo:
+  id: 1
+  name: "foo"
+  counter_field: 5
+  style: "Coggswell"
+
+bar:
+  id: 2
+  name: "bar"
+  counter_field: 10
+  style: "Spacely"
