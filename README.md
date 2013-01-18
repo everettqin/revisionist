@@ -1,11 +1,11 @@
-Revisionist
+Revisionist<a id="top"></a>
 ===========
 
 Revisionist an ActiveRecord versioning done a little differently to support a
 few features that have been tricky in other implementations.
 
-Uhh... Aren't there other libraries that do this?
--------------------------------------------------
+Uhh... Aren't there already Rails versioning libraries?
+--------------------------------------------------------
 
 Well... for one, wheels are made to be reinvented.  For another, they didn't
 everything I wanted them to do -- a couple of features I wanted in  particular:
@@ -21,38 +21,37 @@ something greater than the sum of their parts.
 Before we dive into code, I want to highlight some big differences with
 Revisionist vs. these alternatives:
 
- 1. Revisionist serializes the full object
+ **1. Revisionist serializes the full object**
 
-    That means it takes up more space than the alternatives. I went this
-    direction beause managing changes to associations in an incremental way
-    became too complex.  I'd entertain alternative approaches, but this is what
-    I've come up with so far.
+That means it takes up more space than the alternatives. I went this
+direction beause managing changes to associations in an incremental way
+became too complex.  I'd entertain alternative approaches, but this is what
+I've come up with so far.
 
- 2. Revisionist uses _after_ callbacks, rather than _before_ callbacks
+ **2. Revisionist uses _after_ callbacks, rather than _before_ callbacks**
 
-    Again, this is for association support. Some association changes don't work
-    reliably when the database doesn't match the records. This also means that
-    Revisionist will use more storage than the alternatives, since it's always
-    serializing & storing the current version in addition to the historical.
+Again, this is for association support. Some association changes don't work
+reliably when the database doesn't match the records. This also means that
+Revisionist will use more storage than the alternatives, since it's always
+serializing & storing the current version in addition to the historical.
 
 If you don't need my differentiating features, you can always stick with the
 alternatives; however, I'd invite you to take a stroll through the code either
 way. I've spent some time making it nice for you.
 
+[Back to Top](#top)
 A few words (and a chart) on associations:
 ------------------------------------------
 As this is still a young library, associations are not yet complete.
 I'm working on some solutions, but for now here's what's working & not:
 
-+------------------+--------------------------+------------------------+--------------+----------------+
 | Association      | updated via nested attrs | editing child directly | adding child | removing child |
-+==================+==========================+========================+==============+================+
+|:-----------------|:------------------------:|:----------------------:|:------------:|:--------------:|
 | has_many         | yes                      | no                     | yes          | yes            |
 | belongs_to       | yes                      | no                     | yes          | yes            |
 | habtm            | yes                      | no                     | yes          | yes            |
 | has_many through | yes                      | no                     | yes          | yes            |
 | has_one          | yes                      | no                     | no           | no             |
-+------------------+--------------------------+------------------------+--------------+----------------+
 
 A full list of the features
 ---------------------------
@@ -67,6 +66,7 @@ A full list of the features
  * Recall deleted items via revisions
  * Supports STI models transparently
 
+[Back to Top](#top)
 Some other things I'm rather proud of
 -------------------------------------
  * A well organized & complete test suite
@@ -112,8 +112,8 @@ still keeps the data.
   attr_accessible :name, :crank_count, :sprocket_style
 
   has_revisions include: [:fluxors, :wotsits],
-                skip:    :crank_count,
-                ignore:  :sprocket_style
+                skip:    :counter_field,
+                ignore:  :style
 ```
 
 **NOTE:** You must set the field as *attr_accessible*; otherwise, creating the
@@ -125,8 +125,8 @@ and specify the method name:
 
 ```ruby
   has_revisions include: [:fluxors, :wotsits],
-                skip:    :crank_count,
-                ignore:  :sprocket_style
+                skip:    :counter_field,
+                ignore:  :style
                 meta:    :crank_output
 ```
 
@@ -163,6 +163,7 @@ you specifically skip it.
 
 Examples also exist in the specs/dummy app.
 
+[Back to Top](#top)
 Known issues
 ------------
  * Circular revisions != Good:
