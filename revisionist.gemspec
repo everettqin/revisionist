@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = "Track model changes with associations"
   s.summary     = s.description
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 3.2.9"
   s.add_dependency "activerecord", "~> 3.0"
