@@ -156,6 +156,7 @@ DEPENDENCIES
   jquery-rails
   pry
   pry-debugger
+  rake
   rake-notes
   rb-fsevent (~> 0.9.1)
   revisionist!
