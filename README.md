@@ -1,4 +1,4 @@
-Revisionist<a id="top"></a>
+Revisionist<a id="top"></a> [![Dependency Status](https://gemnasium.com/spiegela/revisionist.png)](https://gemnasium.com/spiegela/revisionist) [![Build Status](https://travis-ci.org/spiegela/revisionist.png?branch=master)](undefined) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/spiegela/revisionist)
 ===========
 
 Revisionist an ActiveRecord versioning done a little differently to support a
