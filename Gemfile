@@ -18,3 +18,14 @@ gem "jquery-rails"
 group :test do
   gem 'rake'
 end
+
+platform :mri do
+  gem 'pry-debugger'
+end
+
+gem 'sqlite3', platform: [:ruby, :mswin, :mingw]
+
+platform :jruby do
+  gem 'jdbc-sqlite3'
+  gem 'activerecord-jdbcsqlite3-adapter'
+end

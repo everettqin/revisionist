@@ -18,14 +18,10 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.9"
   s.add_dependency "activerecord", "~> 3.0"
 
-  s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "guard-rspec"
   s.add_development_dependency "guard-spork"
   s.add_development_dependency "awesome_print"
   s.add_development_dependency "pry"
-  s.add_development_dependency "pry-debugger"
   s.add_development_dependency "rake-notes"
-  s.add_development_dependency "rb-fsevent", "~> 0.9.1"
-
 end
