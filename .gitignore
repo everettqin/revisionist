@@ -8,3 +8,4 @@ spec/dummy/.sass-cache
 zeus.json
 custom_plan.rb
 tmp/*
+.rbx/
